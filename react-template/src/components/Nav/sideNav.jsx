@@ -5,7 +5,7 @@ import TextInput from "./textInput";
 function SideNav ({ formData, onChange }) {
     return (
         <div className="col-4 sideNav px-3 pt-3 overflow-scroll">
-            <h2>Add Your Details</h2>
+            <h2 className="py-3">Add Your Details</h2>
             <Accordion formData={formData} onChange={onChange}/>
         </div>
     )

@@ -9,7 +9,7 @@ function Accordion({ formData, onChange}) {
                 title="Personal Information"
                 collapseId="collapseOne"
                 parentId="accordionInput"
-                inputFieldNames={["First Name", "Last Name", "Email", "Phone Number", "Website", "LinkedIn"]}
+                inputFields={["First Name", "Last Name", "Job Title", "Email", "Phone Number", "Website", "LinkedIn"]}
                 formData={formData}
                 onChange={onChange}
             />
@@ -17,7 +17,7 @@ function Accordion({ formData, onChange}) {
                 title="Education"
                 collapseId="collapseTwo"
                 parentId="accordionInput"
-                inputFieldNames={["Institution Name", "City", "State", "Starting Date", "Graduation Date", "Degree"]}
+                inputFields={["Institution Name", "City", "State", "Starting Date", "Graduation Date", "Degree"]}
                 formData={formData}
                 onChange={onChange}
             />
@@ -25,7 +25,7 @@ function Accordion({ formData, onChange}) {
                 title="Work Experience"
                 collapseId="collapseThree"
                 parentId="accordionInput"
-                inputFieldNames={["Company", "City", "State", "Starting Date", "End Date", "Main Point 1",  "Main Point 2", "Main Point 3"]}
+                inputFields={["Company", "City", "State", "Starting Date", "End Date", "Main Point 1",  "Main Point 2", "Main Point 3"]}
                 formData={formData}
                 onChange={onChange}
             />
@@ -33,7 +33,7 @@ function Accordion({ formData, onChange}) {
                 title="Skills"
                 collapseId="collapseFour"
                 parentId="accordionInput"
-                inputFieldNames={["Technical Skills", "Soft Skills"]}
+                inputFields={["Technical Skills", "Soft Skills"]}
                 formData={formData}
                 onChange={onChange}
             />

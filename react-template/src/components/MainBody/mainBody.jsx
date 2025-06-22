@@ -3,11 +3,9 @@ import SideNav from "../Nav/sideNav";
 import ResumeDisplay from "./resumeDisplay/resumeDisplay";
 
 function MainBody () {
-    const [formData, setFormData] = useState({
-        firstName: "FirstName",
-        lastName: "LastName"
-        // Add more fields as needed
-    });
+    const [formData, setFormData] = useState({});
+
+    console.log(formData);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;

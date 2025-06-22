@@ -8,6 +8,7 @@ function TextInput({ name, value, onChange }) {
         name={name}
         value={value}
         onChange={onChange}
+        placeholder={name}
       />
     </>
   );
