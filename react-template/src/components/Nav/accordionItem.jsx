@@ -1,8 +1,7 @@
 import React from "react";
 import TextInput from "./TextInput";
 
-function AccordionItem({ title, collapseId, parentId, inputFieldNames=[] }) {
-
+function AccordionItem({ title, collapseId, parentId, inputFieldNames=[], formData, onChange }) {
   return (
     <div className="accordion-item">
       <h2 className="accordion-header">
@@ -27,7 +26,8 @@ function AccordionItem({ title, collapseId, parentId, inputFieldNames=[] }) {
                 <TextInput
                     key={index}
                     name={item}
-                    value=""
+                    value={formData[name]}
+                    onChange={onChange}
                 />
             ))}
         </div>
