@@ -1,7 +1,6 @@
-import React from "react";
 import TextInput from "./TextInput";
 
-function AccordionItem({ title, collapseId, parentId, inputFieldNames=[], formData, onChange }) {
+function AccordionItem({ title, collapseId, parentId, inputFieldNames = [], formData, onChange }) {
   return (
     <div className="accordion-item">
       <h2 className="accordion-header">
@@ -22,14 +21,14 @@ function AccordionItem({ title, collapseId, parentId, inputFieldNames=[], formDa
         data-bs-parent={`#${parentId}`}
       >
         <div className="accordion-body">
-            {inputFieldNames.map((item, index) =>(
-                <TextInput
-                    key={index}
-                    name={item}
-                    value={formData[name]}
-                    onChange={onChange}
-                />
-            ))}
+          {inputFieldNames.map((fieldName, index) => (
+            <TextInput
+              key={index}
+              name={fieldName}
+              value={formData[fieldName] !== undefined ? formData[fieldName] : ""}
+              onChange={onChange}
+            />
+          ))}
         </div>
       </div>
     </div>

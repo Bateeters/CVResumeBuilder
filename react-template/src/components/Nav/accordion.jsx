@@ -1,19 +1,8 @@
 import React from "react";
-import { useState } from "react";
 import AccordionItem from "./AccordionItem";
 import ResumeDisplay from "../MainBody/resumeDisplay/resumeDisplay";
 
-function Accordion() {
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-    });
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]:value}));
-    };
-
+function Accordion({ formData, onChange}) {
     return (
         <div className="accordion mb-5" id="accordionInput">
             <AccordionItem
@@ -22,7 +11,7 @@ function Accordion() {
                 parentId="accordionInput"
                 inputFieldNames={["First Name", "Last Name", "Email", "Phone Number", "Website", "LinkedIn"]}
                 formData={formData}
-                onChange={handleInputChange}
+                onChange={onChange}
             />
             <AccordionItem
                 title="Education"
@@ -30,7 +19,7 @@ function Accordion() {
                 parentId="accordionInput"
                 inputFieldNames={["Institution Name", "City", "State", "Starting Date", "Graduation Date", "Degree"]}
                 formData={formData}
-                onChange={handleInputChange}
+                onChange={onChange}
             />
             <AccordionItem
                 title="Work Experience"
@@ -38,7 +27,7 @@ function Accordion() {
                 parentId="accordionInput"
                 inputFieldNames={["Company", "City", "State", "Starting Date", "End Date", "Main Point 1",  "Main Point 2", "Main Point 3"]}
                 formData={formData}
-                onChange={handleInputChange}
+                onChange={onChange}
             />
             <AccordionItem
                 title="Skills"
@@ -46,7 +35,7 @@ function Accordion() {
                 parentId="accordionInput"
                 inputFieldNames={["Technical Skills", "Soft Skills"]}
                 formData={formData}
-                onChange={handleInputChange}
+                onChange={onChange}
             />
         </div>
     );
