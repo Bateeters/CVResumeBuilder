@@ -7,26 +7,30 @@
   width: 100vw;
 }
 
+.fw-700 {
+  font-weight: 700;
+}
+
 .appHeader {
-  background-color: white;
+  background-color: #333333;
   height: 100px;
+  color: white;
 }
 
 .parentDiv {
   width: 100%;
-  background-color: blue;
 }
 
 .sideNav {
-  background-color:pink;
+  background-color:#ececec;
   height: 100vh;
   position: sticky;
   top: 0;
   left: 0;
+  box-shadow: 2px 0 5px #bcbcbc;
 }
 
 .mainSection {
-  background-color: green;
-  height: 400vh;
+  background-color: white;
   margin-left: auto;
 }
