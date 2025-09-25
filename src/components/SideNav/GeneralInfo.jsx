@@ -11,6 +11,8 @@ function GeneralInfo() {
         links: []
     });
 
+    const [isEditing, setIsEditing] = useState(true);
+
     return (
         <>
             <div className="card m-1 p-3">
@@ -54,7 +56,23 @@ function GeneralInfo() {
                     />
 
                     <button>Add Link</button>
-                    <button>Submit</button>
+
+                    {isEditing && (
+                        <button
+                            // make submit button switch editing mode to "false"
+                            onClick={(e) => {
+                                e.preventDefault(); // makes button stop reload/state reset
+                                setIsEditing(false);
+                            }}
+                        >Submit</button>
+                    )}
+
+                    {!isEditing && (
+                        <button
+                            // make edit button switch editing mode to "true"
+                            onClick={() => setIsEditing(true)}
+                        >Edit</button>
+                    )}
                 </form>
             </div>
         </>
