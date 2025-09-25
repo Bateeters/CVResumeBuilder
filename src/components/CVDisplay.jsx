@@ -5,6 +5,7 @@ function CVDisplay(){
             <h2>Job Title</h2>
             <p>email</p>
             <p>phone</p>
+            <p>Location</p>
             <p>link</p>
             <p>link</p>
             <p>link</p>
