@@ -21,19 +21,51 @@ function App() {
     },
     education: [
       {
-        school: "",
-        degree: "",
-        specialization: "",
-        graduationDate: "",
+        school: "Ball State",
+        location: "Muncie, IN",
+        degree: "BFA",
+        specialization: "Visual Communication",
+        gradDate: "May 2017",
+        additional: [
+          "3.2 GPA",
+          "Minor in Marketing"
+        ]
       }
     ],
     experience: [
       {
-        company: "",
-        title: "",
-        startDate: "",
-        endDate: "",
-      }
+        company: "VacationPort",
+        title: "Junior Web Developer",
+        location: "remote",
+        startDate: "July 2024",
+        endDate: "Present",
+        additional: [
+          "I do stuff",
+          "I do other stuff too",
+          "I do too much stuff here..."
+        ]
+      },
+      {
+        company: "Amazon",
+        title: "Delivery Boy",
+        location: "Carmel, IN",
+        startDate: "December 2023",
+        endDate: "July 2024",
+        additional: [
+          "This was a rough job...",
+          "but it did keep me in shape!",
+          "and I suppose it was money."
+        ]
+      },
+      {
+        company: "EZAdsPro",
+        title: "Senior Graphic Designer",
+        location: "Carmel, IN",
+        startDate: "December 2023",
+        endDate: "July 2024",
+        additional: [
+        ]
+      },
     ],
     skills: {
       softSkills: [],

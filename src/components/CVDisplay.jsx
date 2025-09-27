@@ -19,21 +19,33 @@ function CVDisplay({ general, experience, education, skills}){
             <p>{general.summary}</p>
             <hr />
             <h2>Experience</h2>
-            <h4>Job Title - Company</h4>
-            <p>location</p>
-            <p>date</p>
-            <ul>
-                <li>bullet 1</li>
-                <li>bullet 2</li>
-                <li>bullet 3</li>
-            </ul>
+            {experience.map((job) => (
+                <div>
+                    <h4>{job.title} - {job.company}</h4>
+                    <p>{job.location}</p>
+                    <p>{job.startDate} - {job.endDate}</p>
+                    <ul>
+                        {job.additional.map((bullet) => (
+                            <li>{bullet}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+
             <hr />
             <h2>Education</h2>
-            <h4>University Name - location</h4>
-            <p>Grad Date</p>
-            <ul>
-                <li>Additional Information</li>
-            </ul>
+            {education.map((school) => (
+                <div>
+                    <h4>{school.school} - {school.location}</h4>
+                    <p>{school.degree} in {school.specialization}</p>
+                    <p>{school.gradDate}</p>
+                    <ul>
+                        {school.additional.map((bullet) => (
+                            <li>{bullet}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
             <hr />
             <h2>Skills</h2>
             <h4>Technical Skills</h4>
