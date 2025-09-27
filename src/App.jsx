@@ -60,7 +60,12 @@ function App() {
             <Skills />
           </div>
           <div className='col-8'>
-            <CVDisplay />
+            <CVDisplay 
+              general = {info.general}
+              experience = {info.experience}
+              education = {info.education}
+              skills = {info.skills}
+            />
           </div>
         </div>
       </div>

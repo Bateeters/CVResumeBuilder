@@ -1,17 +1,22 @@
-function CVDisplay(){
+function CVDisplay({ general, experience, education, skills}){
     return(
         <>
-            <h1>First Last</h1>
-            <h2>Job Title</h2>
-            <p>email</p>
-            <p>phone</p>
-            <p>Location</p>
-            <p>link</p>
-            <p>link</p>
-            <p>link</p>
+            <h1>{general.firstName} {general.lastName}</h1>
+            <h2>{general.jobTitle}</h2>
+            <p>{general.email}</p>
+            <p>{general.phone}</p>
+            <p>{general.location}</p>
+            {general.links.map((link) => (
+                <p key={link.id}>{link.name}:&nbsp;
+                    <a href={link.url} target="_blank">
+                        {link.url}
+                    </a>
+                </p>
+            ))}
+            
             <hr />
             <h2>Summary</h2>
-            <p>summary text</p>
+            <p>{general.summary}</p>
             <hr />
             <h2>Experience</h2>
             <h4>Job Title - Company</h4>

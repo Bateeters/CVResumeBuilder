@@ -3,6 +3,20 @@ import { useState } from "react";
 function GeneralInfo({ general, setGeneral }) {
     const [isEditing, setIsEditing] = useState(false);
 
+    const handleAddLink = (e) => {
+        e.preventDefault(); // this prevents page reload on click
+        setGeneral({
+            ...general,
+            links: [...general.links, {name: "", url: ""}]
+        })
+    }
+
+    const handleRemoveLink = (i) => {
+        const updatedLinks = [...general.links]; // grab the current list of links
+        updatedLinks.splice(i, 1); // removes just 1 item at the specified index, "i"
+        setGeneral({ ...general, links: updatedLinks }); // update the current list of links with the change
+    }
+
     return (
         <>
             <div className="card m-1 p-3">
@@ -51,7 +65,33 @@ function GeneralInfo({ general, setGeneral }) {
                             onChange={(e) => setGeneral({ ...general, summary: e.target.value})}
                         />
 
-                        <button>Add Link</button>
+                        <label htmlFor="">Links</label>
+                        {general.links.map((link, index) => (
+                            <div key={index} style={{ marginBottom: "10px" }}>
+                                <input
+                                type="text"
+                                placeholder="Link Name"
+                                value={link.name}
+                                onChange={(e) => {
+                                    const updatedLinks = [...general.links];
+                                    updatedLinks[index].name = e.target.value;
+                                    setGeneral({ ...general, links: updatedLinks });
+                                }}
+                                />
+                                <input
+                                type="text"
+                                placeholder="Link URL"
+                                value={link.url}
+                                onChange={(e) => {
+                                    const updatedLinks = [...general.links];
+                                    updatedLinks[index].url = e.target.value;
+                                    setGeneral({ ...general, links: updatedLinks });
+                                }}
+                                />
+                                <button type="button" onClick={() => handleRemoveLink(index)}>X</button>
+                            </div>
+                        ))}
+                        <button onClick={handleAddLink}>Add Link</button>
 
                         <button
                             // make submit button switch editing mode to "false"
@@ -70,7 +110,11 @@ function GeneralInfo({ general, setGeneral }) {
                         <p>{general.email}</p>
                         <p>{general.phone}</p>
                         <p>{general.location}</p>
-                        <p>{general.links}</p>
+                        {general.links.map((link) => (
+                            <p key={link.id}>{link.name}:&nbsp;
+                                <a href={link.url}>{link.url}</a>
+                            </p>
+                        ))}
                         <p>{general.summary}</p>
                         <button
                             // make edit button switch editing mode to "true"
