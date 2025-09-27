@@ -19,6 +19,7 @@ function App() {
       summary: "",
       links: []
     },
+    experience: [],
     education: [
       {
         school: "Ball State",
@@ -31,41 +32,6 @@ function App() {
           "Minor in Marketing"
         ]
       }
-    ],
-    experience: [
-      {
-        company: "VacationPort",
-        title: "Junior Web Developer",
-        location: "remote",
-        startDate: "July 2024",
-        endDate: "Present",
-        additional: [
-          "I do stuff",
-          "I do other stuff too",
-          "I do too much stuff here..."
-        ]
-      },
-      {
-        company: "Amazon",
-        title: "Delivery Boy",
-        location: "Carmel, IN",
-        startDate: "December 2023",
-        endDate: "July 2024",
-        additional: [
-          "This was a rough job...",
-          "but it did keep me in shape!",
-          "and I suppose it was money."
-        ]
-      },
-      {
-        company: "EZAdsPro",
-        title: "Senior Graphic Designer",
-        location: "Carmel, IN",
-        startDate: "December 2023",
-        endDate: "July 2024",
-        additional: [
-        ]
-      },
     ],
     skills: {
       softSkills: [],
@@ -87,7 +53,10 @@ function App() {
               general = {info.general}
               setGeneral = {(updatedGeneral) => setInfo({ ...info, general: updatedGeneral})}
             />
-            <Experience />
+            <Experience 
+              experience = {info.experience}
+              setExperience = {(updatedExperience) => setInfo({ ...info, experience: updatedExperience})}
+            />
             <Education />
             <Skills />
           </div>
