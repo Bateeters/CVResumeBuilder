@@ -1,17 +1,7 @@
-import { useState } from "react"
+import { useState } from "react";
 
-function GeneralInfo() {
-    const [general, setGeneral] = useState({
-        firstName: "",
-        lastName: "",
-        jobTitle: "",
-        email: "",
-        phone: "",
-        location: "",
-        links: []
-    });
-
-    const [isEditing, setIsEditing] = useState(true);
+function GeneralInfo({ general, setGeneral }) {
+    const [isEditing, setIsEditing] = useState(false);
 
     return (
         <>
@@ -55,6 +45,11 @@ function GeneralInfo() {
                             value={general.location}
                             onChange={(e) => setGeneral({...general, location: e.target.value })}
                         />
+                        <label htmlFor="">Summary</label>
+                        <textarea placeholder="Summary Section" 
+                            value={general.summary}
+                            onChange={(e) => setGeneral({ ...general, summary: e.target.value})}
+                        />
 
                         <button>Add Link</button>
 
@@ -76,6 +71,7 @@ function GeneralInfo() {
                         <p>{general.phone}</p>
                         <p>{general.location}</p>
                         <p>{general.links}</p>
+                        <p>{general.summary}</p>
                         <button
                             // make edit button switch editing mode to "true"
                             onClick={() => setIsEditing(true)}

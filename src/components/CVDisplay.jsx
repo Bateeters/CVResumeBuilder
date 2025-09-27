@@ -23,14 +23,6 @@ function CVDisplay(){
                 <li>bullet 3</li>
             </ul>
             <hr />
-            <h2>Projects</h2>
-            <h4>Project Title</h4>
-            <ul>
-                <li>bullet 1</li>
-                <li>bullet 2</li>
-                <li>bullet 3</li>
-            </ul>
-            <hr />
             <h2>Education</h2>
             <h4>University Name - location</h4>
             <p>Grad Date</p>
