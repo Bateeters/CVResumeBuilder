@@ -36,8 +36,8 @@ function CVDisplay({ general, experience, education, skills}){
             <h2>Education</h2>
             {education.map((school) => (
                 <div>
-                    <h4>{school.school} - {school.location}</h4>
-                    <p>{school.degree} in {school.specialization}</p>
+                    <h4>{school.school} - {school.degree} in {school.specialization}</h4>
+                    <p>{school.location}</p>
                     <p>{school.gradDate}</p>
                     <ul>
                         {school.additional.map((bullet) => (
@@ -50,11 +50,11 @@ function CVDisplay({ general, experience, education, skills}){
             <h2>Skills</h2>
             <h4>Technical Skills</h4>
             <ul>
-                <li>list of skills, place them here</li>
+                <li>{skills.technicalSkills}</li>
             </ul>
             <h4>Soft Skills</h4>
             <ul>
-                <li>list of soft skills, go here</li>
+                <li>{skills.softSkills}</li>
             </ul>
         </>
     )

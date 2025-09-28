@@ -1,7 +1,6 @@
 import { useState } from "react"
 
 function Experience({ experience, setExperience }) {
-    const [isEditing, setIsEditing] = useState(false);
 
     const handleExperienceChange = (e, index, field) => {
         const updated = [...experience];
@@ -11,19 +10,25 @@ function Experience({ experience, setExperience }) {
 
     const handleAddBullet = (index) => {
         const updated = [...experience];
-        updated[index].additional.push("");
+        updated[index] = {
+            ...updated[index],
+            additional: [...updated[index].additional, ""]
+        };
         setExperience(updated);
     };
 
     const handleBulletChange = (e, expIndex, bulletIndex) => {
-    const updated = [...experience];
-    updated[expIndex].additional[bulletIndex] = e.target.value;
-    setExperience(updated);
+        const updated = [...experience];
+        updated[expIndex].additional[bulletIndex] = e.target.value;
+        setExperience(updated);
     };
 
     const handleRemoveBullet = (expIndex, bulletIndex) => {
         const updated = [...experience];
-        updated[expIndex].additional.splice(bulletIndex, 1);
+        updated[expIndex] = {
+            ...updated[expIndex],
+            additional: updated[expIndex].additional.filter((_, i) => i !== bulletIndex)
+        };
         setExperience(updated);
     };
 

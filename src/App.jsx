@@ -20,22 +20,10 @@ function App() {
       links: []
     },
     experience: [],
-    education: [
-      {
-        school: "Ball State",
-        location: "Muncie, IN",
-        degree: "BFA",
-        specialization: "Visual Communication",
-        gradDate: "May 2017",
-        additional: [
-          "3.2 GPA",
-          "Minor in Marketing"
-        ]
-      }
-    ],
+    education: [],
     skills: {
-      softSkills: [],
-      technicalSkills: []
+      softSkills: "",
+      technicalSkills: ""
     }
   })
 
@@ -57,8 +45,14 @@ function App() {
               experience = {info.experience}
               setExperience = {(updatedExperience) => setInfo({ ...info, experience: updatedExperience})}
             />
-            <Education />
-            <Skills />
+            <Education 
+              education = {info.education}
+              setEducation = {(updatedEducation) => setInfo({ ...info, education: updatedEducation})}
+            />
+            <Skills
+              skills = {info.skills}
+              setSkills = {(updatedSkills) => setInfo({ ...info, skills: updatedSkills})}
+            />
           </div>
           <div className='col-8'>
             <CVDisplay 
