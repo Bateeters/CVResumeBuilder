@@ -36,7 +36,7 @@ function App() {
       </div>
       <div className='container-fluid py-3' style={{backgroundColor: "whitesmoke"}}>
         <div className='row'>
-          <div className='col-4'>
+          <div className='col-lg-4 col-12'>
             <GeneralInfo 
               general = {info.general}
               setGeneral = {(updatedGeneral) => setInfo({ ...info, general: updatedGeneral})}
@@ -54,7 +54,7 @@ function App() {
               setSkills = {(updatedSkills) => setInfo({ ...info, skills: updatedSkills})}
             />
           </div>
-          <div className='col-8'>
+          <div className='col-lg-8 col-12'>
             <CVDisplay 
               general = {info.general}
               experience = {info.experience}

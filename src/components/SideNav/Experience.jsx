@@ -101,7 +101,7 @@ function Experience({ experience, setExperience }) {
                         </form>
                         ) : (
                         <div className="row col-12 justify-content-start m-auto p-0">
-                            <p className="p-0 mb-1">{job.title} - {job.company}</p>
+                            <p className="p-0 mb-1"><strong>{job.title}</strong> - {job.company}</p>
                             <button className="col-3 btn btn-secondary mb-3 me-3" onClick={() => toggleEditExperience(id, true)}>Edit</button>
                             <button className="col-3 btn btn-danger mb-3" onClick={() => handleRemoveExperience(id)}>X</button>
                         </div>
