@@ -47,7 +47,7 @@ function CVDisplay({ general, experience, education, skills}){
             <h2>Education</h2>
             {education.map((school) => (
                 <div className="row col-12 justify-content-end">
-                    <h4 className="mt-3">{school.school} - {school.degree} in {school.specialization}</h4>
+                    <h4 className="mt-3">{school.degree} in {school.specialization} - {school.school}</h4>
                     <div className="row col-12 justify-content-between p-0">
                         <p className="col-auto p-0">{school.gradDate}</p>
                         <p className="col-auto p-0">{school.location}</p>
