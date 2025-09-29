@@ -21,7 +21,7 @@ function GeneralInfo({ general, setGeneral }) {
         <>
             <div className="card mx-1 mb-3 p-3 shadow-sm row justifly-content-center">
                 <h3 className="p-0">General Information</h3>
-                <hr className="w-100"/>
+                <hr />
                 {isEditing && (
                     <form action="" className="row col-12 justify-content-between m-auto p-0">
                         <input type="text" placeholder="First Name" className="col-5 mb-3"

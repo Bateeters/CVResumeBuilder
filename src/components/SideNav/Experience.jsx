@@ -56,61 +56,60 @@ function Experience({ experience, setExperience }) {
 
     return(
         <>
-            <div className="card mx-1 my-3 p-3">
-                <h3>Experience</h3>
+            <div className="card mx-1 mb-3 p-3 shadow-sm row justifly-content-center">
+                <h3 className="p-0">Experience</h3>
+                <hr />
                 {experience.map((job, id) => (
-                    <div key={id}>
+                    <div className="p-0" key={id}>
                         {job.isEditing ? (
-                        <>
-                            <input type="text" placeholder="Position"
+                        <form action="" className="row col-12 justify-content-between m-auto p-0">
+                            <input type="text" placeholder="Position" className="col-12 mb-3"
                                 value={job.title}
                                 onChange={(e) => handleExperienceChange(e, id, 'title')}
                             />
-                            <input type="text" placeholder="Company" 
+                            <input type="text" placeholder="Company" className="col-12 mb-3" 
                                 value={job.company}
                                 onChange={(e) => handleExperienceChange(e, id, 'company')}
                             />
-                            <input type="text" placeholder="Location" 
+                            <input type="text" placeholder="Location" className="col-12 mb-3" 
                                 value={job.location}
                                 onChange={(e) => handleExperienceChange(e, id, 'location')}
                             />
-                            <input type="text" placeholder="Start Date" 
+                            <input type="text" placeholder="Start Date" className="col-12 mb-3" 
                                 value={job.startDate}
                                 onChange={(e) => handleExperienceChange(e, id, 'startDate')}
                             />
-                            <input type="text" placeholder="End Date" 
+                            <input type="text" placeholder="End Date" className="col-12 mb-3" 
                                 value={job.endDate}
                                 onChange={(e) => handleExperienceChange(e, id, 'endDate')}
                             />
-                            <div>
-                                {job.additional.map((bullet, bID) => (
-                                    <div key={bID}>
-                                        <textarea
-                                            value={bullet} onChange={(e) => handleBulletChange(e, id, bID)}
-                                        />
-                                        <button onClick={() => handleRemoveBullet(id, bID)}>X</button>
-                                    </div>
-                                ))}
-                            </div>
 
-                            <button onClick={() => handleAddBullet(id)}>Add Bullet</button>
+                            {job.additional.map((bullet, bID) => (
+                                <div className="col-12 p-0 mb-3 row m-auto justify-content-between align-items-center" key={bID}>
+                                    <textarea className="col-9"
+                                        value={bullet} onChange={(e) => handleBulletChange(e, id, bID)}
+                                    />
+                                    <button className="col-2 btn btn-danger h-50" onClick={() => handleRemoveBullet(id, bID)}>X</button>
+                                </div>
+                            ))}
 
 
+                            <button className="col-5 btn btn-secondary mb-3" type="button" onClick={() => handleAddBullet(id)}>Add Bullet</button>
 
-                            <button onClick={() => toggleEditExperience(id, false)}>Submit</button>
+                            <button className="col-5 btn btn-success mb-3" type="button" onClick={() => toggleEditExperience(id, false)}>Submit</button>
                             
-                        </>
+                        </form>
                         ) : (
-                        <>
-                            <p>{job.title} - {job.company}</p>
-                            <button onClick={() => toggleEditExperience(id, true)}>Edit</button>
-                            <button onClick={() => handleRemoveExperience(id)}>X</button>
-                        </>
+                        <div className="row col-12 justify-content-start m-auto p-0">
+                            <p className="p-0 mb-1">{job.title} - {job.company}</p>
+                            <button className="col-3 btn btn-secondary mb-3 me-3" onClick={() => toggleEditExperience(id, true)}>Edit</button>
+                            <button className="col-3 btn btn-danger mb-3" onClick={() => handleRemoveExperience(id)}>X</button>
+                        </div>
                         )}
                     </div>
                 ))}
 
-                <button onClick={handleAddExperience}>Add Experience</button>
+                <button className="col-12 btn btn-primary" onClick={handleAddExperience}>Add Experience</button>
             </div>
 
         </>

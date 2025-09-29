@@ -97,8 +97,6 @@ function Education({ education, setEducation }) {
 
                             <button onClick={() => handleAddBullet(id)}>Add Bullet</button>
 
-
-
                             <button onClick={() => toggleEditEducation(id, false)}>Submit</button>
                             
                         </>

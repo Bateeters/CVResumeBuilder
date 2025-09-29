@@ -1,6 +1,6 @@
 function CVDisplay({ general, experience, education, skills}){
     return(
-        <div className="resumeDisplay pt-4 pb-5 px-5 shadow-sm mx-2">
+        <div className="resumeDisplay pt-4 pb-5 px-5 shadow mx-2">
             <h1>{general.firstName} {general.lastName}</h1>
             <h2>{general.jobTitle}</h2>
             <p>{general.email}</p>

@@ -5,7 +5,7 @@ function Skills({ skills, setSkills }) {
 
     return (
         <>
-            <div className="card m-1 p-3">
+            <div className="card m-1 mb-5 p-3">
                 <h3>Skills</h3>
                 {isEditing && (
                     <form action="">
