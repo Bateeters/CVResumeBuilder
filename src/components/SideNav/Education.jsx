@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 function Education({ education, setEducation }) {
 
     const handleEducationChange = (e, index, field) => {
@@ -60,7 +58,7 @@ function Education({ education, setEducation }) {
 
     return(
         <>
-            <div className="card m-1 p-3">
+            <div className="card mx-1 my-3 p-3">
                 <h3>Education</h3>
                 {education.map((edu, id) => (
                     <div key={id}>

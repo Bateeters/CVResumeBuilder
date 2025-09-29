@@ -19,7 +19,7 @@ function GeneralInfo({ general, setGeneral }) {
 
     return (
         <>
-            <div className="card m-1 p-3">
+            <div className="card mx-1 mb-3 p-3 shadow-sm">
                 <h3>General Information</h3>
                 {isEditing && (
                     <form action="">

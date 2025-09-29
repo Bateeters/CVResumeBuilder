@@ -30,11 +30,11 @@ function App() {
   return (
     <>
       <div className='container-fluid'>
-        <div className='row text-center p-4' style={{backgroundColor: "gray", color: "white"}}>
+        <div className='row text-center p-4' style={{backgroundColor: "#444444", color: "white"}}>
           <h1>CV / Resume Builder</h1>
         </div>
       </div>
-      <div className='container-fluid'>
+      <div className='container-fluid py-3' style={{backgroundColor: "whitesmoke"}}>
         <div className='row'>
           <div className='col-4'>
             <GeneralInfo 

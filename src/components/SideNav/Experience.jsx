@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 function Experience({ experience, setExperience }) {
 
     const handleExperienceChange = (e, index, field) => {
@@ -58,7 +56,7 @@ function Experience({ experience, setExperience }) {
 
     return(
         <>
-            <div className="card m-1 p-3">
+            <div className="card mx-1 my-3 p-3">
                 <h3>Experience</h3>
                 {experience.map((job, id) => (
                     <div key={id}>
