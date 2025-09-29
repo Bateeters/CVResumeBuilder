@@ -29,7 +29,7 @@ function CVDisplay({ general, experience, education, skills}){
 
             <h2>Experience</h2>
             {experience.map((job) => (
-                <div className="row justify-content-end">
+                <div className="row col-12 justify-content-end">
                     <h4 className="mt-3">{job.title} - {job.company}</h4>
                     <div className="row col-12 justify-content-between p-0">
                         <p className="col-auto p-0">{job.startDate} - {job.endDate}</p>
@@ -46,11 +46,14 @@ function CVDisplay({ general, experience, education, skills}){
             <hr />
             <h2>Education</h2>
             {education.map((school) => (
-                <div>
-                    <h4>{school.school} - {school.degree} in {school.specialization}</h4>
-                    <p>{school.location}</p>
-                    <p>{school.gradDate}</p>
-                    <ul>
+                <div className="row col-12 justify-content-end">
+                    <h4 className="mt-3">{school.school} - {school.degree} in {school.specialization}</h4>
+                    <div className="row col-12 justify-content-between p-0">
+                        <p className="col-auto p-0">{school.gradDate}</p>
+                        <p className="col-auto p-0">{school.location}</p>
+                    </div>
+                    
+                    <ul className="col-11">
                         {school.additional.map((bullet) => (
                             <li>{bullet}</li>
                         ))}
