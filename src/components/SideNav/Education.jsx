@@ -58,59 +58,58 @@ function Education({ education, setEducation }) {
 
     return(
         <>
-            <div className="card mx-1 my-3 p-3">
-                <h3>Education</h3>
+            <div className="card mx-1 mb-3 p-3 shadow-sm row justify-content-center">
+                <h3 className="p-0">Education</h3>
+                <hr />
                 {education.map((edu, id) => (
-                    <div key={id}>
+                    <div className="p-0" key={id}>
                         {edu.isEditing ? (
-                        <>
-                            <input type="text" placeholder="School"
+                        <form  action="" className="row col-12 justify-content-between m-auto p-0">
+                            <input type="text" placeholder="School" className="col-12 mb-3"
                                 value={edu.school}
                                 onChange={(e) => handleEducationChange(e, id, 'school')}
                             />
-                            <input type="text" placeholder="Location" 
+                            <input type="text" placeholder="Location" className="col-12 mb-3"
                                 value={edu.location}
                                 onChange={(e) => handleEducationChange(e, id, 'location')}
                             />
-                            <input type="text" placeholder="Degree" 
+                            <input type="text" placeholder="Degree" className="col-5 mb-3" 
                                 value={edu.degree}
                                 onChange={(e) => handleEducationChange(e, id, 'degree')}
                             />
-                            <input type="text" placeholder="Specialization" 
+                            <input type="text" placeholder="Specialization" className="col-5 mb-3"
                                 value={edu.specialization}
                                 onChange={(e) => handleEducationChange(e, id, 'specialization')}
                             />
-                            <input type="text" placeholder="Graduation Date" 
+                            <input type="text" placeholder="Graduation Date" className="col-12 mb-3"
                                 value={edu.gradDate}
                                 onChange={(e) => handleEducationChange(e, id, 'gradDate')}
                             />
-                            <div>
-                                {edu.additional.map((bullet, bID) => (
-                                    <div key={bID}>
-                                        <textarea
-                                            value={bullet} onChange={(e) => handleBulletChange(e, id, bID)}
-                                        />
-                                        <button onClick={() => handleRemoveBullet(id, bID)}>X</button>
-                                    </div>
-                                ))}
-                            </div>
+                            {edu.additional.map((bullet, bID) => (
+                                <div className="col-12 p-0 mb-3 row m-auto justify-content-between align-items-center" key={bID}>
+                                    <textarea className="col-9"
+                                        value={bullet} onChange={(e) => handleBulletChange(e, id, bID)}
+                                    />
+                                    <button className="col-2 btn btn-danger h-50" onClick={() => handleRemoveBullet(id, bID)}>X</button>
+                                </div>
+                            ))}
 
-                            <button onClick={() => handleAddBullet(id)}>Add Bullet</button>
+                            <button type="button" className="col-5 btn btn-secondary mb-3" onClick={() => handleAddBullet(id)}>Add Bullet</button>
 
-                            <button onClick={() => toggleEditEducation(id, false)}>Submit</button>
+                            <button type="button" className="col-5 btn btn-success mb-3" onClick={() => toggleEditEducation(id, false)}>Submit</button>
                             
-                        </>
+                        </form>
                         ) : (
-                        <>
-                            <p>{edu.school} - {edu.degree} in {edu.specialization}</p>
-                            <button onClick={() => toggleEditEducation(id, true)}>Edit</button>
-                            <button onClick={() => handleRemoveEducation(id)}>X</button>
-                        </>
+                        <div className="row col-12 justify-content-start m-auto p-0">
+                            <p className="p-0 mb-1">{edu.school} - {edu.degree} in {edu.specialization}</p>
+                            <button className="col-3 btn btn-secondary mb-3 me-3" onClick={() => toggleEditEducation(id, true)}>Edit</button>
+                            <button className="col-3 btn btn-danger mb-3" onClick={() => handleRemoveEducation(id)}>X</button>
+                        </div>
                         )}
                     </div>
                 ))}
 
-                <button onClick={handleAddEducation}>Add Education</button>
+                <button className="col-12 btn btn-primary" onClick={handleAddEducation}>Add Education</button>
             </div>
 
         </>

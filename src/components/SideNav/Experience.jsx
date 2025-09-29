@@ -56,7 +56,7 @@ function Experience({ experience, setExperience }) {
 
     return(
         <>
-            <div className="card mx-1 mb-3 p-3 shadow-sm row justifly-content-center">
+            <div className="card mx-1 mb-3 p-3 shadow-sm row justify-content-center">
                 <h3 className="p-0">Experience</h3>
                 <hr />
                 {experience.map((job, id) => (
