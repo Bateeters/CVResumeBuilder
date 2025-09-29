@@ -1,18 +1,26 @@
 function CVDisplay({ general, experience, education, skills}){
     return(
         <div className="resumeDisplay pt-4 pb-5 px-5 shadow mx-2">
-            <h1>{general.firstName} {general.lastName}</h1>
-            <h2>{general.jobTitle}</h2>
-            <p>{general.email}</p>
-            <p>{general.phone}</p>
-            <p>{general.location}</p>
-            {general.links.map((link) => (
-                <p key={link.id}>{link.name}:&nbsp;
-                    <a href={link.url} target="_blank">
-                        {link.url}
-                    </a>
-                </p>
-            ))}
+            <div className="row justify-content-between align-items-end mt-4 mb-2">
+                <h1 className="col-auto">{general.firstName} {general.lastName}</h1>
+                <h2 className="col-auto">{general.jobTitle}</h2>
+            </div>
+            <div className="row justify-content-between">
+                <p className="col-auto mb-0">{general.email}</p>
+                <p className="col-auto mb-0">{general.phone}</p>
+                <p className="col-auto mb-0">{general.location}</p>
+            </div>
+            <hr />
+            <div className="row">
+                {general.links.map((link) => (
+                    <p className="col-auto mb-0" key={link.id}>{link.name}:&nbsp;
+                        <a href={link.url} target="_blank">
+                            {link.url}
+                        </a>
+                    </p>
+                ))}
+            </div>
+
             
             <hr />
             <h2>Summary</h2>
