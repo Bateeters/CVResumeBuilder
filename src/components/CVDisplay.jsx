@@ -62,14 +62,18 @@ function CVDisplay({ general, experience, education, skills}){
             ))}
             <hr />
             <h2>Skills</h2>
-            <h4>Technical Skills</h4>
-            <ul>
-                <li>{skills.technicalSkills}</li>
-            </ul>
-            <h4>Soft Skills</h4>
-            <ul>
-                <li>{skills.softSkills}</li>
-            </ul>
+            <div className="row col-12 justify-content-end">
+                <h4 className="mt-3">Technical Skills</h4>
+                <ul className="col-11">
+                    <li>{skills.technicalSkills}</li>
+                </ul>
+            </div>
+            <div className="row col-12 justify-content-end">
+                <h4 className="mt-3">Soft Skills</h4>
+                <ul className="col-11">
+                    <li>{skills.softSkills}</li>
+                </ul>
+            </div>
         </div>
     )
 }
